@@ -5,6 +5,8 @@ import Menu
 import ExportData
 import ViewBook
 import DeletePhone
+import ImportData
+import CreateEmptyDatabase
 def IsValidType(id, telTypes):
     for i in telTypes:
         if i[0] == id: return True
@@ -50,8 +52,7 @@ def start(db):
         elif index == 2:
             AddData(db)
         elif index == 3:
-            # DeletePhone.PrintPeoples(DeletePhone.GetPeoples(db))
-            peoples = DeletePhone.GetPeoples(db)
+            DeletePhone.GetPeoples(db)
             delIndex = int(input('Введите номер пользователя, которого надо удалить: '))
             DeletePhone.DeleteUser(db, delIndex)
         elif index == 4:
@@ -65,3 +66,7 @@ def start(db):
             else:
                 ft = 'html'
             ExportData.ExportDataFile(ViewBook.GetTelephoneBook(db), ft, 'export')
+        elif index == 5:
+            ImportData.ImportData(db)
+        elif index == 6:
+            CreateEmptyDatabase.CreateEmptyDB()
