@@ -9,7 +9,8 @@ def InitMainMenu():
     actions[4] = 'Экспорт телефонной книги'
     actions[5] = 'Импорт телефонной книги'
     actions[6] = 'Создать пустую БД'
-    actions[7] = 'Выход'
+    actions[7] = 'Изменить пользователя'
+    actions[8] = 'Выход'
     return actions
 def ChooseMenu(actions):
     index = int(input('Выберите действие:'))

@@ -7,6 +7,7 @@ import ViewBook
 import DeletePhone
 import ImportData
 import CreateEmptyDatabase
+import EditData
 def IsValidType(id, telTypes):
     for i in telTypes:
         if i[0] == id: return True
@@ -70,3 +71,10 @@ def start(db):
             ImportData.ImportData(db)
         elif index == 6:
             CreateEmptyDatabase.CreateEmptyDB()
+        elif index == 7:
+            DeletePhone.GetPeoples(db)
+            editIndex = int(input('Введите номер пользователя, которого надо изменить: '))
+            lName = input('Введите новую фамилию: ')
+            fName = input('Введите новое имя: ')
+            EditData.EditUser(db, editIndex, fName, lName)
+
